@@ -17,6 +17,8 @@
   --background-colour: #1c1b22; */
   --colour: #1c1b22;
   --background-colour: #e1d6c5;
+
+  --border-radius: 8px;
 }
 /* light */
 /* @media (prefers-color-scheme: light) {

@@ -26,6 +26,17 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  max-width: 1800px;
+
+  /* display: flex;
+  flex-direction: column;
+  margin: auto; */
+}
+@media (min-width: 1800px) {
+  .hero {
+    margin: auto;
+  }
 }
 .gradient {
   position: absolute;
@@ -43,6 +54,7 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  padding-inline: 1rem;
 }
 button {
   /* font: inherit; */
