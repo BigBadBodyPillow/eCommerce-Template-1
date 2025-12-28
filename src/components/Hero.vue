@@ -6,7 +6,7 @@
     <!-- <img src="../assets/bricks/pexels-madebymath-21380.jpg" alt="Hero Image" /> -->
     <div class="gradient"></div>
     <div class="hero-content">
-      <h1>Would you buy our Bricks</h1>
+      <h1>Would you buy our Bricks?</h1>
       <h3>Discover our premium collection of Bricks</h3>
       <button>Shop Now</button>
     </div>
