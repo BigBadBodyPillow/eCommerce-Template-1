@@ -10,20 +10,19 @@
     <!-- <div class="search" type="text">Search</div> -->
     <input class="search" type="text" placeholder="Search" />
     <div class="button-group">
-      <button>O</button>
-      <button>O</button>
-      <button>O</button>
+      <!-- <button>O</button> -->
+      <button class="cart" aria-label="Cart button"></button>
+      <button class="settings" aria-label="settings button"></button>
     </div>
   </nav>
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Space Grotesk';
+  /* font-family: 'Space Grotesk'; */
 }
 .navbar {
   height: 80px;
@@ -63,7 +62,7 @@ a {
   display: inline-block;
   font-weight: 500;
 
-  padding: 7px 13px;
+  padding-inline: 1rem;
   text-transform: uppercase;
   transition: 0.25s;
 }
@@ -75,11 +74,14 @@ a {
   border-radius: 1000px;
   padding-inline: 1rem;
   height: 2.5rem;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: white;
   color: inherit;
+  font-weight: 500;
 }
 .search::placeholder {
   color: inherit;
+  font-weight: 500;
 }
 .button-group {
   float: right;
@@ -91,12 +93,13 @@ button {
   height: 2.5rem;
   border-radius: 50%;
   border: 2px solid;
-  background-color: transparent;
   cursor: pointer;
-  line-height: 2.5rem;
-  background-color: var(--colour);
-  color: rgb(11, 11, 11);
-  border: none;
+  /* line-height: 2.5rem; */
+  /* background-color: var(--colour);
+  color: rgb(11, 11, 11); */
+  background-color: white;
+  color: black;
+  /* border: none; */
 
   transition: 0.25s;
 }
@@ -108,12 +111,24 @@ a:active,
 button:active {
   transform: scale(1);
 }
-@media (prefers-color-scheme: light) {
+.settings {
+  background-image: url('../assets/icons/settings2-svgrepo-com.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+}
+.cart {
+  background-image: url('../assets/icons/cart-1-svgrepo-com.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+/* @media (prefers-color-scheme: light) {
   button {
     background-color: white;
     color: black;
-  }
-}
+  } 
+}*/
 
 /* Disable animation when reduced motion is preferred */
 @media (prefers-reduced-motion: reduce) {

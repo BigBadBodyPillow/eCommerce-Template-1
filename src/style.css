@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Space Grotesk', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,11 +13,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --colour: rgba(255, 255, 255, 0.87);
-  --background-colour: #1c1b22;
+  /* --colour: rgba(255, 255, 255, 0.87);
+  --background-colour: #1c1b22; */
+  --colour: #1c1b22;
+  --background-colour: #e1d6c5;
 }
 /* light */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --colour: #1c1b22;
     --background-colour: #e1d6c5;
@@ -27,8 +30,11 @@
   button {
     background-color: #f9f9f9;
   }
+} */
+button,
+input {
+  font: inherit;
 }
-
 a {
   font-weight: 500;
   color: #646cff;

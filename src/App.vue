@@ -2,11 +2,13 @@
 import RainbowLine from './components/RainbowLine.vue';
 import Main from './components/Main.vue';
 import Navbar from './components/Navbar.vue';
+import Hero from './components/Hero.vue';
 </script>
 
 <template>
   <RainbowLine />
   <Main>
     <Navbar />
+    <Hero />
   </Main>
 </template>
