@@ -3,7 +3,6 @@
 </template>
 
 <style scoped>
-
 .rainbow-line {
   --rainbow: linear-gradient(
     to left,
@@ -20,8 +19,7 @@
     #ff70cb,
     #fe8462,
     #fef26a
-);
-
+  );
 
   position: fixed;
   top: 0;
@@ -32,8 +30,16 @@
   z-index: 20;
   background-image: var(--rainbow);
   background-size: 400%;
-  
+
   animation: rainbow-animation 100s infinite;
+}
+@keyframes rainbow-animation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
 
 /* Disable animation when reduced motion is preferred */
@@ -42,5 +48,4 @@
     animation: none;
   }
 }
-
 </style>
