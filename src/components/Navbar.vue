@@ -1,52 +1,48 @@
-<script>
-export default {
-  name: 'Navbar',
-  data() {
-    return {
-      showMenu: typeof window !== 'undefined' && window.innerWidth < 850,
-      // null = unset, true = manually open, false = manually closed
-      manualPreference: null,
-    };
-  },
-  mounted() {
-    this.resizeHandler = () => {
-      if (window.innerWidth >= 850) {
-        this.showMenu = false;
-        return;
-      }
-      // respect manual preference
-      if (this.manualPreference === false) {
-        this.showMenu = false;
-      } else if (this.manualPreference === true) {
-        this.showMenu = true;
-      } else {
-        this.showMenu = true;
-      }
-    };
-    window.addEventListener('resize', this.resizeHandler);
-    // initial check
-    if (window.innerWidth >= 850) {
-      this.showMenu = false;
-    } else {
-      this.showMenu = this.manualPreference === false ? false : true;
-    }
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.resizeHandler);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.resizeHandler);
-  },
-  methods: {
-    toggleMenu() {
-      if (window.innerWidth < 850) {
-        this.showMenu = !this.showMenu;
-        // set useres perfereance
-        this.manualPreference = this.showMenu;
-      }
-    },
-  },
-};
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const showMenu = ref<boolean>(
+  typeof window !== 'undefined' ? window.innerWidth < 850 : false
+);
+const manualPreference = ref<boolean | null>(null);
+
+function resizeHandler() {
+  if (typeof window === 'undefined') return;
+  if (window.innerWidth >= 850) {
+    showMenu.value = false;
+    return;
+  }
+  if (manualPreference.value === false) {
+    showMenu.value = false;
+  } else if (manualPreference.value === true) {
+    showMenu.value = true;
+  } else {
+    showMenu.value = true;
+  }
+}
+
+onMounted(() => {
+  if (typeof window === 'undefined') return;
+  window.addEventListener('resize', resizeHandler);
+  if (window.innerWidth >= 850) {
+    showMenu.value = false;
+  } else {
+    showMenu.value = manualPreference.value === false ? false : true;
+  }
+});
+
+onBeforeUnmount(() => {
+  if (typeof window === 'undefined') return;
+  window.removeEventListener('resize', resizeHandler);
+});
+
+function toggleMenu() {
+  if (typeof window === 'undefined') return;
+  if (window.innerWidth < 850) {
+    showMenu.value = !showMenu.value;
+    manualPreference.value = showMenu.value;
+  }
+}
 </script>
 
 <template>
@@ -101,6 +97,8 @@ export default {
   justify-content: center;
   padding: 0 2rem;
   margin-top: 8px;
+  max-width: 1800px;
+  margin-inline: auto;
   /* background-color: #333; */
 }
 .logo {
@@ -203,10 +201,10 @@ button:active {
   }
 }*/
 
-@media (min-width: 1900px) {
+@media (min-width: 1200px) {
   ul {
-    margin-left: calc(100% - 50%);
-    transform: translate(-80%);
+    /* margin-left: calc(100% - 50%); */
+    transform: translate(30%);
   }
 }
 
@@ -224,7 +222,7 @@ button:active {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 852px) {
   /* disable default nav */
   * {
     --menu-background-colour: rgb(17, 14, 14);
