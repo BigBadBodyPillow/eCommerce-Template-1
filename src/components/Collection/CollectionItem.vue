@@ -37,10 +37,13 @@ export default {
 
 <style scoped>
 * {
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 .collection-item {
-  background-color: #c2b6a5;
+  --collection-item-background: #c2b6a5;
+  --card-content-background: #e4d9c7af;
+  background-color: var(--collection-item-background);
+  border: 2px solid var(--collection-item-background);
   border-radius: var(--border-radius);
   aspect-ratio: 1/1;
   min-width: 200px;
@@ -55,6 +58,8 @@ export default {
 }
 .collection-item:hover {
   transform: scale(1.1);
+  border: 2px solid #ffffffc3;
+  /* border-color: var(--card-content-background); */
 }
 
 img {
@@ -68,7 +73,7 @@ img {
   margin: 0;
 }
 .card-content {
-  background-color: rgba(228, 217, 199, 0.685);
+  background-color: var(--card-content-background);
   margin-top: 0.5em;
   padding: 10px;
   border-radius: calc(var(--border-radius) - 2px);
@@ -94,8 +99,8 @@ span {
   margin-inline: auto;
 }
 button {
-  background-color: rgb(255, 136, 89);
-  color: black;
+  /* background-color: rgb(255, 136, 89);
+  color: black; */
   border-radius: 1000px;
   white-space: nowrap;
   transition: 0.25s;
