@@ -19,42 +19,46 @@ import Rusks from '../../assets/collection/ButtermilkRuskSAD-683x1024.jpg';
     <div class="item-collection">
       <CollectionItem
         title="This is a brick"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="brick"
       />
       <CollectionItem
         title="Another brick but different"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="concrete"
       />
-      <CollectionItem title="third brick" price="R199.99" :imageSrc="brickv2" />
+      <CollectionItem
+        title="third brick"
+        price="R 199.99"
+        :imageSrc="brickv2"
+      />
       <CollectionItem
         title="This is the 4th brick"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="brick3"
       />
       <CollectionItem
         title="Brick again"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="Corn_satin_scaled"
       />
       <CollectionItem
         title="Also a brick"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="moreBricks"
       />
       <CollectionItem
         title="Cinder block looking things"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="bricksAgain"
       />
-      <CollectionItem title="Lego bricks" price="R199.99" :imageSrc="lego" />
+      <CollectionItem title="Lego bricks" price="R 199.99" :imageSrc="lego" />
       <CollectionItem
         title="White bricks in a wall"
-        price="R199.99"
+        price="R 199.99"
         :imageSrc="whiteBricks"
       />
-      <CollectionItem title="Rusks" price="R199.99" :imageSrc="Rusks" />
+      <CollectionItem title="Rusks" price="R 199.99" :imageSrc="Rusks" />
     </div>
   </div>
 </template>

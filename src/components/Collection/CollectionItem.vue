@@ -53,7 +53,7 @@ export default {
   display: grid;
   flex: 1;
 
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: 0.25s;
 }
 .collection-item:hover {
@@ -92,15 +92,18 @@ h4 {
   justify-content: space-between;
 }
 span {
-  text-align: start;
   float: start;
-  padding: 0.6em 0;
+  /* padding: 0.6em 0; */
   border-radius: 8px;
-  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  line-height: 35px;
+  margin-right: auto;
 }
 button {
   /* background-color: rgb(255, 136, 89);
   color: black; */
+  font-size: 0.8rem;
   border-radius: 1000px;
   white-space: nowrap;
   transition: 0.25s;
