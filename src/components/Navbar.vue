@@ -46,7 +46,7 @@ function toggleMenu() {
 </script>
 
 <template>
-  <nav :class="['navbar', { open: showMenu }]">
+  <header :class="['navbar', { open: showMenu }]">
     <div
       :class="['logo', { open: showMenu }]"
       @click="toggleMenu"
@@ -57,12 +57,14 @@ function toggleMenu() {
       Logo
       <!-- {{ asdasdasd }} -->
     </div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
     <!-- <div class="search" type="text">Search</div> -->
     <input class="search" type="text" placeholder="Search" />
     <div class="button-group">
@@ -70,16 +72,16 @@ function toggleMenu() {
       <button class="cart" aria-label="Cart button"></button>
       <button class="settings" aria-label="settings button"></button>
     </div>
-  </nav>
+  </header>
 
-  <div class="mobile-menu" v-if="showMenu" aria-hidden="false">
+  <nav class="mobile-menu" v-if="showMenu" aria-hidden="false">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Services</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <style scoped>
@@ -114,11 +116,11 @@ function toggleMenu() {
 /* .logo:active {
   transform: scale(0.9);
 } */
-nav,
+/* nav,
 ul {
   height: 100%;
-}
-ul {
+} */
+header nav {
   margin-left: auto;
   list-style: none;
 }
@@ -202,7 +204,7 @@ button:active {
 }*/
 
 @media (min-width: 1200px) {
-  ul {
+  nav {
     /* margin-left: calc(100% - 50%); */
     transform: translate(30%);
   }
@@ -227,7 +229,7 @@ button:active {
   * {
     --menu-background-colour: rgb(17, 14, 14);
   }
-  nav ul {
+  header nav {
     display: none;
   }
 

@@ -6,4 +6,5 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 
 [Stock images](https://www.pexels.com/)
 [icons](https://www.svgrepo.com/)
+[icons2](https://svgl.app/)
 [svg viewer](https://www.svgviewer.dev/svg-to-data-uri)

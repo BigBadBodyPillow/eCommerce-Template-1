@@ -4,6 +4,7 @@ import Main from './components/Main.vue';
 import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
 import Collection from './components/Collection/Collection.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -13,4 +14,5 @@ import Collection from './components/Collection/Collection.vue';
     <Hero />
     <Collection />
   </Main>
+  <Footer />
 </template>
