@@ -3,6 +3,7 @@ import RainbowLine from './components/RainbowLine.vue';
 import Main from './components/Main.vue';
 import Navbar from './components/Navbar.vue';
 import Cart from './components/Cart.vue';
+import Settings from './components/Settings.vue';
 import Hero from './components/Hero.vue';
 import Collection from './components/Collection/Collection.vue';
 import Footer from './components/Footer.vue';
@@ -13,6 +14,7 @@ import Footer from './components/Footer.vue';
   <Main>
     <Navbar />
     <Cart />
+    <Settings />
     <Hero />
     <Collection />
   </Main>

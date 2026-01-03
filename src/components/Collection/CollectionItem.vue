@@ -1,7 +1,13 @@
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'CollectionItem',
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -15,7 +21,22 @@ export default {
       required: true,
     },
   },
-};
+  methods: {
+    addToCart() {
+      const payload = {
+        ID: this.id,
+        Title: this.title,
+        Price: this.price,
+        imageSrc: this.imageSrc,
+      };
+      // dispatch a window event so any component (Cart.vue) can listen
+      window.dispatchEvent(new CustomEvent('cart-add', { detail: payload }));
+      // also emit for backwards compatibility
+      // @ts-ignore
+      this.$emit('add', payload);
+    },
+  },
+});
 </script>
 
 <template>
@@ -29,7 +50,7 @@ export default {
       <h4>{{ title }}</h4>
       <div class="card-bottom">
         <span class="price">{{ price }}</span>
-        <button>Add to Cart</button>
+        <button @click="addToCart">Add to Cart</button>
       </div>
     </div>
   </div>

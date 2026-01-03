@@ -1,16 +1,26 @@
 <script setup lang="ts">
 import CollectionItem from './CollectionItem.vue';
-// Import images so Vite can resolve them at build/dev time
-import brick from '../../assets/collection/bricks_for_home_construction.jpg';
-import concrete from '../../assets/collection/concrete-bricks-1708941378-7311212.jpeg';
-import brickv2 from '../../assets/collection/1110004-1.jpg';
-import brick3 from '../../assets/collection/Clay-Stock-Bricks-3-1.jpeg';
-import Corn_satin_scaled from '../../assets/collection/Corn-Satin-scaled.jpg';
-import moreBricks from '../../assets/collection/NFP-Stock-Perforated-680x680.jpg';
-import bricksAgain from '../../assets/collection/Build-it-Gansbaai-Manufacturing-Concrete-Blocks-1.png';
-import lego from '../../assets/collection/landingBricks2.0797f1e722392c9e320a.jpg';
-import whiteBricks from '../../assets/collection/TumbledVintageBrick-Alpine-White.png';
-import Rusks from '../../assets/collection/ButtermilkRuskSAD-683x1024.jpg';
+import storeData from '../../store_data.json';
+
+//temp due to locally stored store info
+const images = import.meta.glob('../../assets/collection/*', {
+  eager: true,
+}) as Record<string, { default: string }>;
+
+const imageMap: Record<string, string> = Object.fromEntries(
+  Object.entries(images).map(([key, mod]) => {
+    const parts = key.split('/');
+    const filename = parts[parts.length - 1];
+    return [filename, mod.default];
+  })
+);
+
+const bricks = storeData.map((it: any) => ({
+  ...it,
+  imageSrc: imageMap[it.ImageUrl] || '',
+}));
+
+// cart is handled by Cart.vue via window events now
 </script>
 
 <template>
@@ -18,47 +28,14 @@ import Rusks from '../../assets/collection/ButtermilkRuskSAD-683x1024.jpg';
     <h2>Collection</h2>
     <div class="item-collection">
       <CollectionItem
-        title="This is a brick"
-        price="R 199.99"
-        :imageSrc="brick"
+        v-for="brick in bricks"
+        :key="brick.ID"
+        :id="brick.ID"
+        :title="brick.Title"
+        :price="brick.Price"
+        :imageSrc="brick.imageSrc"
       />
-      <CollectionItem
-        title="Another brick but different"
-        price="R 199.99"
-        :imageSrc="concrete"
-      />
-      <CollectionItem
-        title="third brick"
-        price="R 199.99"
-        :imageSrc="brickv2"
-      />
-      <CollectionItem
-        title="This is the 4th brick"
-        price="R 199.99"
-        :imageSrc="brick3"
-      />
-      <CollectionItem
-        title="Brick again"
-        price="R 199.99"
-        :imageSrc="Corn_satin_scaled"
-      />
-      <CollectionItem
-        title="Also a brick"
-        price="R 199.99"
-        :imageSrc="moreBricks"
-      />
-      <CollectionItem
-        title="Cinder block looking things"
-        price="R 199.99"
-        :imageSrc="bricksAgain"
-      />
-      <CollectionItem title="Lego bricks" price="R 199.99" :imageSrc="lego" />
-      <CollectionItem
-        title="White bricks in a wall"
-        price="R 199.99"
-        :imageSrc="whiteBricks"
-      />
-      <CollectionItem title="Rusks" price="R 199.99" :imageSrc="Rusks" />
+      <!-- @add="handleAdd" -->
     </div>
   </div>
 </template>

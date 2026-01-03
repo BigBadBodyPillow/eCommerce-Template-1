@@ -1,0 +1,63 @@
+[
+  {
+    "ID": "0",
+    "Title": "This is a brick",
+    "Price": "R 199.99",
+    "ImageUrl": "bricks_for_home_construction.jpg"
+  },
+  {
+    "ID": "1",
+    "Title": "Another brick but different",
+    "Price": "R 199.99",
+    "ImageUrl": "concrete-bricks-1708941378-7311212.jpeg"
+  },
+  {
+    "ID": "2",
+    "Title": "third brick",
+    "Price": "R 199.99",
+    "ImageUrl": "1110004-1.jpg"
+  },
+  {
+    "ID": "3",
+    "Title": "This is the 4th brick",
+    "Price": "R 199.99",
+    "ImageUrl": "Clay-Stock-Bricks-3-1.jpeg"
+  },
+  {
+    "ID": "4",
+    "Title": "Brick again",
+    "Price": "R 199.99",
+    "ImageUrl": "Corn-Satin-scaled.jpg"
+  },
+
+  {
+    "ID": "5",
+    "Title": "Also a brick",
+    "Price": "R 199.99",
+    "ImageUrl": "NFP-Stock-Perforated-680x680.jpg"
+  },
+  {
+    "ID": "6",
+    "Title": "Cinder block looking things",
+    "Price": "R 199.99",
+    "ImageUrl": "Build-it-Gansbaai-Manufacturing-Concrete-Blocks-1.png"
+  },
+  {
+    "ID": "7",
+    "Title": "Lego bricks",
+    "Price": "R 199.99",
+    "ImageUrl": "landingBricks2.0797f1e722392c9e320a.jpg"
+  },
+  {
+    "ID": "8",
+    "Title": "White bricks in a wall",
+    "Price": "R 199.99",
+    "ImageUrl": "TumbledVintageBrick-Alpine-White.png"
+  },
+  {
+    "ID": "9",
+    "Title": "Rusks",
+    "Price": "R 199.99",
+    "ImageUrl": "ButtermilkRuskSAD-683x1024.jpg"
+  }
+]
