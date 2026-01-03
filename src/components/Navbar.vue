@@ -69,7 +69,7 @@ function toggleMenu() {
     <input class="search" type="text" placeholder="Search" />
     <div class="button-group">
       <!-- <button>O</button> -->
-      <button class="cart" aria-label="Cart button"></button>
+      <button class="cart" aria-label="Cart button" popovertarget="cart-popover"></button>
       <button class="settings" aria-label="settings button"></button>
     </div>
   </header>
