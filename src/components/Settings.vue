@@ -15,7 +15,9 @@
     </ul> -->
 
     <!-- <hr /> -->
-    <button>Option 1</button>
+    <button>Profile</button>
+    <button>Option 2</button>
+    <button>Option 3</button>
   </div>
 </template>
 
@@ -28,6 +30,8 @@
   border-radius: var(--border-radius);
   padding: 1rem;
   border: 0;
+  box-sizing: border-box;
+  max-width: 275px;
 }
 
 h3 {
@@ -70,6 +74,9 @@ li:hover a {
 }
 hr {
   border-radius: 200px;
+}
+button:not(:first-child) {
+  margin-top: 0.5rem;
 }
 button {
   width: 100%;
